@@ -1,5 +1,7 @@
 package com.dosw.MasterChefAPI.model.entity;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 import com.dosw.MasterChefAPI.model.entity.enums.ParticipantRole;
@@ -17,4 +19,6 @@ public class Chef {
     private String name;
 
     private ParticipantRole role;
+
+    List<Recipe> recipes;
 }

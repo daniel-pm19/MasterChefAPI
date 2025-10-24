@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.List;
 
 import com.dosw.MasterChefAPI.model.entity.Recipe;
+import com.dosw.MasterChefAPI.model.entity.enums.ParticipantRole;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -14,6 +15,10 @@ public interface RecipeRepository extends MongoRepository<Recipe, String>{
     Optional<Recipe> findByTitle(String title);
 
     List<Recipe> findAllRecipes();
+
+    List<Recipe> findByAuthorId(String id);
+
+    List<Recipe> findByAuthorRole(ParticipantRole role);
 
     List<Recipe> findByIngredient(String ingredient);
 

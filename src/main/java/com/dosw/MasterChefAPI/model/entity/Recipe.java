@@ -17,6 +17,8 @@ public class Recipe {
     private String id;
     
     private String title;
+
+    private Chef authorChef;
     
     private ArrayList<String> ingridients;
     

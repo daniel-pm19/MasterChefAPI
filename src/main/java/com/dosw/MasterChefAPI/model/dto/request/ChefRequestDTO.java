@@ -1,6 +1,9 @@
 package com.dosw.MasterChefAPI.model.dto.request;
 
 import com.dosw.MasterChefAPI.model.entity.enums.ParticipantRole;
+import com.dosw.MasterChefAPI.model.entity.Recipe;
+
+import java.util.List;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
@@ -27,5 +30,8 @@ public class ChefRequestDTO {
     @Schema(description = "Role of the chef", example = "CONTESTANT")
     @NotNull(message = "The role cannot be null")
     private ParticipantRole role;
+
+    @Schema(description = "List of recipes of each chef", example = "[Filet Mignon, Penne Pasta, Grill Chicken Breast]")
+    private List<Recipe> recipes;
 
 }

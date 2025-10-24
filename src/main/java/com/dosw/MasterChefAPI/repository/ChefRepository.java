@@ -11,8 +11,6 @@ public interface ChefRepository extends MongoRepository<Chef, String> {
 
     Optional<Chef> findById(String id);
 
-    List<Chef> findByRole(ParticipantRole role);
-
     Optional<Chef> findByRoleAndId(ParticipantRole role, String id);
 
     List<Chef> findAllChefs();

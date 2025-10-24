@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 
+import com.dosw.MasterChefAPI.model.entity.Chef;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,5 +38,9 @@ public class RecipeRequestDTO {
     @Schema(description = "Represents in wich season the recipe was made", example = "1")
     @NotBlank(message = "The season cannot be blank")
     private int season;
+
+    @Schema(description = "The author chef for each recipe", example = "Juan Perez")
+    @NotBlank(message = "The author cannot be blank")
+    private Chef autorChef;
 
 }
