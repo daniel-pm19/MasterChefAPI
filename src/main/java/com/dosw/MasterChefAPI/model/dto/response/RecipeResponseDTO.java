@@ -2,6 +2,7 @@ package com.dosw.MasterChefAPI.model.dto.response;
 
 import java.util.ArrayList;
 
+import com.dosw.MasterChefAPI.model.entity.Chef;
 
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +11,11 @@ import lombok.Data;
 @Builder
 public class RecipeResponseDTO {
 
-    private int id;
+    private String id;
 
     private String title;
+
+    private Chef authorChef;
 
     private ArrayList<String> ingridients;
 
