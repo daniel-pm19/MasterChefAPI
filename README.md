@@ -1,0 +1,33 @@
+# 🍳 Máster Chef Celebrity API
+
+API REST desarrollada por **DOSW Company** para la gestión de recetas del programa **Máster Chef Celebrity**.  
+Esta API permite consultar, registrar, actualizar y eliminar recetas creadas por **participantes**, **jueces (chefs)** y **televidentes**, además de filtrar por temporada o por ingredientes específicos.
+
+---
+
+## ⚙️ Instalación y Ejecución Local
+
+### 1️⃣ Clonar el repositorio
+
+```bash
+git clone https://github.com/<tu-usuario>/MasterChefAPI.git
+cd MasterChefAPI
+```
+### 2️⃣ Ejecutar el proyecto
+
+```bash
+mvn clean compile
+mvn spring-boot:run
+```
+
+
+---
+# Ejemplos de request y response por endpoint
+
+---
+# Enlace de swagger UI 
+
+--
+# Envidencia azure
+
+
