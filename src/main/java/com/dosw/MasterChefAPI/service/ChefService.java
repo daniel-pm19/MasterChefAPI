@@ -2,6 +2,7 @@ package com.dosw.MasterChefAPI.service;
 
 import org.springframework.stereotype.Service;
 
+
 import com.dosw.MasterChefAPI.exception.ResourceNotFoundException;
 import com.dosw.MasterChefAPI.mapper.ChefMapper;
 import com.dosw.MasterChefAPI.model.dto.request.ChefRequestDTO;
@@ -41,7 +42,7 @@ public class ChefService {
         Chef chef = chefRepository.findById(id).orElseThrow(() -> ResourceNotFoundException.create("ID", id));
         chef.setName(dto.getName());
         chef.setRole(dto.getRole());
-        
+        chef.setRecipes(dto.getRecipes());
         Chef updated = chefRepository.save(chef);
         return chefMapper.toDto(updated);
     }
@@ -52,5 +53,6 @@ public class ChefService {
             throw ResourceNotFoundException.create("ID", id);
         }
         chefRepository.deleteById(id);
-    }    
+    } 
+    
 }
