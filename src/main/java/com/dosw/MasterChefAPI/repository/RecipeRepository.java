@@ -14,13 +14,13 @@ public interface RecipeRepository extends MongoRepository<Recipe, String>{
 
     Optional<Recipe> findByTitle(String title);
 
-    List<Recipe> findAllRecipes();
+    List<Recipe> findAll();
 
-    List<Recipe> findByAuthorId(String id);
+    List<Recipe> findByAuthorChefId(String id);
 
-    List<Recipe> findByAuthorRole(ParticipantRole role);
+    List<Recipe> findByAuthorChefRole(ParticipantRole role);
 
-    List<Recipe> findByIngredient(String ingredient);
+    List<Recipe> findByIngridientsContaining(String ingredient);
 
     List<Recipe> findAllBySeason(int season);
 

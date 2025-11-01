@@ -41,6 +41,6 @@ public class RecipeRequestDTO {
 
     @Schema(description = "The author chef for each recipe", example = "Juan Perez")
     @NotBlank(message = "The author cannot be blank")
-    private Chef autorChef;
+    private Chef authorChef;
 
 }

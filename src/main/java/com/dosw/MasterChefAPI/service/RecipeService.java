@@ -31,7 +31,7 @@ public class RecipeService {
     public RecipeResponseDTO createRecipe(RecipeRequestDTO dto){
         Recipe recipe = Recipe.builder()
         .title(dto.getTitle())
-        .authorChef(dto.getAutorChef())
+        .authorChef(dto.getAuthorChef())
         .ingridients(dto.getIngridients())
         .steps(dto.getSteps())
         .season(dto.getSeason())
@@ -45,7 +45,7 @@ public class RecipeService {
     public RecipeResponseDTO updateRecipe(String id, RecipeRequestDTO dto){
         Recipe recipe = recipeRepository.findById(id).orElseThrow(() -> ResourceNotFoundException.create("ID", id));
         recipe.setTitle(dto.getTitle());
-        recipe.setAuthorChef(dto.getAutorChef());
+        recipe.setAuthorChef(dto.getAuthorChef());
         recipe.setIngridients(dto.getIngridients());
         recipe.setSteps(dto.getSteps());
         recipe.setSeason(dto.getSeason());
@@ -77,20 +77,20 @@ public class RecipeService {
 
 
     public List<RecipeResponseDTO> getRecipesByContestant() {
-        return recipeRepository.findByAuthorRole(ParticipantRole.CONTESTANT)
+        return recipeRepository.findByAuthorChefRole(ParticipantRole.CONTESTANT)
                 .stream().map(recipeMapper::toDto)
                 .collect(Collectors.toList());
     }
 
     public List<RecipeResponseDTO> getRecipesByViewer() {
-        return recipeRepository.findByAuthorRole(ParticipantRole.VIEWER)
+        return recipeRepository.findByAuthorChefRole(ParticipantRole.VIEWER)
                 .stream().map(recipeMapper::toDto)
                 .collect(Collectors.toList());
     }
     
 
     public List<RecipeResponseDTO> getRecipesByJudge() {
-        return recipeRepository.findByAuthorRole(ParticipantRole.JUDGE)
+        return recipeRepository.findByAuthorChefRole(ParticipantRole.JUDGE)
                 .stream().map(recipeMapper::toDto)
                 .collect(Collectors.toList());
     }
@@ -102,7 +102,7 @@ public class RecipeService {
     }
 
     public List<RecipeResponseDTO> getRecipesByIngredient(String ingredient) {
-        return recipeRepository.findByIngredient(ingredient)
+        return recipeRepository.findByIngridientsContaining(ingredient)
                 .stream().map(recipeMapper::toDto)
                 .collect(Collectors.toList());
     }

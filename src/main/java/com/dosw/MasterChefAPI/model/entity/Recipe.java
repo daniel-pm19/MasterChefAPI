@@ -1,5 +1,5 @@
 package com.dosw.MasterChefAPI.model.entity;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
@@ -20,9 +20,9 @@ public class Recipe {
 
     private Chef authorChef;
     
-    private ArrayList<String> ingridients;
+    private List<String> ingridients;
     
-    private ArrayList<String> steps;
+    private List<String> steps;
     
     private int season;
 
