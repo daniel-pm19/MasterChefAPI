@@ -28,7 +28,7 @@ https://mastercheft2-a8afeadpdvbxbshj.canadacentral-01.azurewebsites.net/swagger
 ```
 
 
-![alt text](image-1.png)
+![alt text](/docs/image-1.png)
 ---
 # Evidencia azure
 
