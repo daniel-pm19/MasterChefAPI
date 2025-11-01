@@ -19,15 +19,13 @@ cd MasterChefAPI
 mvn clean compile
 mvn spring-boot:run
 ```
-
-
----
-# Ejemplos de request y response por endpoint
-
 ---
 # Enlace de swagger UI 
 
---
-# Envidencia azure
+```bash
+https://mastercheft2-a8afeadpdvbxbshj.canadacentral-01.azurewebsites.net/swagger-ui/index.html
+
+```
+
 
 
