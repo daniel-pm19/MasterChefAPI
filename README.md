@@ -28,11 +28,11 @@ https://mastercheft2-a8afeadpdvbxbshj.canadacentral-01.azurewebsites.net/swagger
 ```
 
 
-![alt text](image-1.png)
+![Evidencia swagger](image-1.png)
 ---
 # Evidencia azure
 
 
-![Evidemcia azure](/docs/azure.png)
+![Evidencia azure](/docs/azure.png)
 
 
