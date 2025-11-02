@@ -39,30 +39,57 @@ jobs:
           name: masterchef-api
           path: target/*.jar
 
-deploy:
-  runs-on: ubuntu-latest
-  needs: build
-  permissions:
-  id-token: write
-  contents: read
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+    id-token: write
+    contents: read
 
-  steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v4
-      with:
-        name: java-app
-      
-    - name: Login to Azure
-      uses: azure/login@v2
-      with:
-        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E3BBA8DC2C9849D1B0EFC1E10CE96DD0 }}
-        tenant-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A24240666636424A8BBF6C81D16FE73E }}
-        subscription-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7C9E359957B94BC8950CA740807D8487 }}
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: java-app
+        
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E3BBA8DC2C9849D1B0EFC1E10CE96DD0 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A24240666636424A8BBF6C81D16FE73E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7C9E359957B94BC8950CA740807D8487 }}
 
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v3
-      with:
-        app-name: 'theboys-sirha'
-        slot-name: 'Production'
-        package: '*.jar'
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'theboys-sirha'
+          slot-name: 'Production'
+          package: '*.jar'
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+    id-token: write
+    contents: read
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: java-app
+        
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E3BBA8DC2C9849D1B0EFC1E10CE96DD0 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A24240666636424A8BBF6C81D16FE73E }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7C9E359957B94BC8950CA740807D8487 }}
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'theboys-sirha'
+          slot-name: 'Production'
+          package: '*.jar'
