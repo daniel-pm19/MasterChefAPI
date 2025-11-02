@@ -27,7 +27,7 @@ public class ChefController {
 
 
     @PostMapping("")
-    public ResponseEntity<ChefResponseDTO> createRecipe(
+    public ResponseEntity<ChefResponseDTO> createChef(
             @Valid @RequestBody ChefRequestDTO dto) {
         ChefResponseDTO created = chefService.createChef(dto);
 
@@ -35,7 +35,7 @@ public class ChefController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ChefResponseDTO> updatedRecipe(
+    public ResponseEntity<ChefResponseDTO> updateChef(
             @Parameter(description = "Chef to be updated", required = true) @PathVariable String id,
             @Valid @RequestBody ChefRequestDTO dto) {
         ChefResponseDTO studentUpdated = chefService.updateChef(id, dto);
@@ -44,7 +44,7 @@ public class ChefController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteRecipe(
+    public ResponseEntity<Void> deleteChef(
             @Parameter(description = "Chef to be deleted", required = true) @PathVariable String id) {
         chefService.deleteChef(id);
 
