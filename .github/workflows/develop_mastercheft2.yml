@@ -53,10 +53,13 @@ jobs:
         with:
           name: masterchef-api
 
+      - name: 🔐 Login a Azure
+        uses: azure/login@v1
+        with:
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
       - name: 🚀 Desplegar en Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'masterchefT2'   
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: '*.jar'
